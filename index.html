@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobMagitha Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Interactive Job Portal</p>
+        <h1>Find work that fits your ambition.</h1>
+        <p class="hero__text">
+          Explore curated openings, filter by company and role, and keep track of saved jobs in one responsive dashboard.
+        </p>
+      </div>
+      <div class="hero__stats">
+        <article class="stat-card">
+          <span id="job-count">0</span>
+          <p>Jobs Available</p>
+        </article>
+        <article class="stat-card">
+          <span id="saved-count">0</span>
+          <p>Saved Jobs</p>
+        </article>
+      </div>
+    </header>
+
+    <main class="portal-layout">
+      <section class="panel panel--filters" aria-label="Job filters">
+        <div class="panel__heading">
+          <h2>Search & Filter</h2>
+          <p>Refine the listings instantly.</p>
+        </div>
+
+        <div class="filter-group">
+          <label for="search-input">Search jobs</label>
+          <input id="search-input" type="search" placeholder="Search title, company, or location">
+        </div>
+
+        <div class="filter-grid">
+          <div class="filter-group">
+            <label for="company-filter">Company</label>
+            <select id="company-filter">
+              <option value="All">All Companies</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="role-filter">Role type</label>
+            <select id="role-filter">
+              <option value="All">All Roles</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="clear-filters" class="button button--ghost" type="button">Clear Filters</button>
+      </section>
+
+      <section class="panel panel--jobs" aria-label="Available jobs">
+        <div class="panel__heading">
+          <h2>Open Roles</h2>
+          <p id="results-summary">Loading jobs...</p>
+        </div>
+        <div id="job-list" class="job-grid"></div>
+      </section>
+
+      <aside class="panel panel--saved" aria-label="Saved jobs">
+        <div class="panel__heading">
+          <h2>Saved Jobs</h2>
+          <p>Bookmark openings to revisit later.</p>
+        </div>
+        <div id="saved-jobs" class="saved-jobs"></div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="./dist/app.js"></script>
+</body>
+</html>
